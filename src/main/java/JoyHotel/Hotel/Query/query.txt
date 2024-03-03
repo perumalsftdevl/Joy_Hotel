@@ -1,0 +1,24 @@
+CREATE TABLE Room (
+    Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    room_type VARCHAR(255),
+    room_price DECIMAL(10, 2),
+    isBooked BOOLEAN DEFAULT FALSE,
+    Photo LONGBLOB
+);
+CREATE INDEX idx_room_room_type ON Room (room_type);
+
+CREATE TABLE BookedRoom (
+    BookingId BIGINT AUTO_INCREMENT PRIMARY KEY,
+    check_in DATE,
+    check_out DATE,
+    guest_full_name VARCHAR(255),
+    guest_email VARCHAR(255),
+    no_adults INT,
+    no_children INT,
+    total_guest INT,
+    confirm_code VARCHAR(255),
+    room_id BIGINT,
+    FOREIGN KEY (room_id) REFERENCES Room(Id)
+);
+CREATE INDEX idx_bookedroom_check_in ON BookedRoom (check_in);
+
