@@ -31,7 +31,7 @@ public class Room {
     @Lob
     private Blob Photo;
 
-    @OneToMany(mappedBy = "room" ,fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "BookingId" ,fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<BookedRoom> Bookings;
 
     public Room() {
