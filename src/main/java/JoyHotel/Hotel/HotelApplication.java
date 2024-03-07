@@ -14,7 +14,7 @@ public class HotelApplication {
 	}
 	@GetMapping(path = "/")
 	public  String HelloWorld(){
-		return  "Api Working!!!!";
+		return  "Api Working!!!";
 	}
 
 

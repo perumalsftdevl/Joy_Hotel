@@ -26,9 +26,10 @@ public class Room {
 
     @Column(name = "room_price")
     private BigDecimal RoomPrice;
-    @Column(name = "isBooked")
+    @Column(name = "is_booked")
     private boolean isBooked = false;
     @Lob
+    @Column(name ="photo")
     private Blob Photo;
 
     @OneToMany(mappedBy = "BookingId" ,fetch = FetchType.LAZY, cascade = CascadeType.ALL)

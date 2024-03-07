@@ -22,3 +22,13 @@ CREATE TABLE BookedRoom (
 );
 CREATE INDEX idx_bookedroom_check_in ON BookedRoom (check_in);
 
+Column name Changed
+ALTER TABLE Room RENAME COLUMN isBooked TO is_booked;
+
+
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+TRUNCATE TABLE Room;
+
+SET FOREIGN_KEY_CHECKS = 1;
